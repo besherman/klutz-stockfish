@@ -1,0 +1,23 @@
+{
+  "name": "klutz-stockfish",
+  "version": "0.0.1",
+  "description": "stockfish wrapper",
+  "main": "js/index.js",
+  "typings": "js/index",
+  "license": "UNLICENSED",
+  "readme": "whatnot",
+  "repository": "none",
+  "scripts": {
+    "pretest": "tsc --rootdir ts --module commonjs --outdir js",
+    "test": "mocha js/test"
+  },
+  "dependencies": {
+    "stockfish": "^6.0.5"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.7.3"
+  }
+}
