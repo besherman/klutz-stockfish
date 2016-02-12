@@ -4,6 +4,8 @@
 import {MyClass} from "../main/index";
 import {Engine, AnalyzeDuration} from "../main/engine";
 
+import {Observable, Observer} from "../../node_modules/rxjs/Rx";
+
 
 //import chai = require("chai");
 
@@ -88,6 +90,18 @@ describe("testing engine", function() {
                 done();
             }
         });
+    });
+
+    it("trying it out", (done) => {
+
+        let source = Observable.create((observer: Observer<string>) => {
+            // this is only called when someone subscribes
+        });
+
+        source.subscribe(function(x: any) { console.log("next")}, function(e: any) {console.log("error"), function() { console.log("complete")}});
+
+
+
     });
 
 });

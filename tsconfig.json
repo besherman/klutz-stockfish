@@ -11,10 +11,8 @@
     "outDir": "js",
     "rootDir": "ts"
   },
+
   "exclude": [
     "node_modules"
-  ],
-  "filesGlob": [
-    "ts/**/*.ts"
   ]
 }

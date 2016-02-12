@@ -1,6 +1,8 @@
 import {Move} from "./move";
 import createStockfish = require("stockfish");
 
+import {Observable, Observer} from "../../node_modules/rxjs/Rx";
+
 
 interface Command {
     message: string;
