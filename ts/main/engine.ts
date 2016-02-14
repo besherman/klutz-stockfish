@@ -1,4 +1,5 @@
 import {Move} from "./move";
+import {InfoParser} from "./info_parser";
 import createStockfish = require("stockfish");
 
 import {Observable, Observer} from "../../node_modules/rxjs/Rx";
@@ -173,6 +174,11 @@ export class AnalyzeDuration {
         return new AnalyzeDuration("depth " + level);
     }
 
+    //// TODO: i don't get this - it wont stop
+    //static nodes(nodes:number): AnalyzeDuration {
+    //    return new AnalyzeDuration("nodes " + nodes);
+    //}
+
     static forTime(milliseconds: number): AnalyzeDuration {
         return new AnalyzeDuration("movetime " + milliseconds);
     }
@@ -198,8 +204,14 @@ class AnalyzeCommand implements Command {
     }
 
     public consume(line: string): boolean {
-        //console.log(line);
-        if(line.indexOf("bestmove") != -1) {
+        if(line.indexOf("info") === 0) {
+            try {
+                const props = new InfoParser(line).parse();
+            } catch(e) {
+                console.log(line);
+                console.log(e);
+            }
+        } else if(line.indexOf("bestmove") == 0) {
             let move = line.substring(9).split(" ")[0];
             this._resolve(move);
             return false;
@@ -207,6 +219,7 @@ class AnalyzeCommand implements Command {
         return true;
     }
 }
+
 
 export class Engine {
     private _debug = false;

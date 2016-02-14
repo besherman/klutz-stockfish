@@ -92,17 +92,42 @@ describe("testing engine", function() {
         });
     });
 
-    it("trying it out", (done) => {
+    //it("analyze()", (done) => {
+    //    let engine = new Engine();
+    //    engine.position("Q7/5k2/1p6/4R3/5P2/5KP1/8/8 b - - 0 50");
+    //    engine.analyze(AnalyzeDuration.forTime(10000)).then(e => {
+    //        if(e !== "e7e5") {
+    //            done("invalid best move: " + e);
+    //        } else {
+    //            done();
+    //        }
+    //    });
+    //
+    //});
 
-        let source = Observable.create((observer: Observer<string>) => {
-            // this is only called when someone subscribes
-        });
-
-        source.subscribe(function(x: any) { console.log("next")}, function(e: any) {console.log("error"), function() { console.log("complete")}});
 
 
 
-    });
+    //it("trying it out", (done) => {
+    //
+    //    let source = Observable.create((observer: Observer<string>) => {
+    //        // this is only called when someone subscribes
+    //        console.log("create()");
+    //    });
+    //
+    //
+    //
+    //    console.log("before subscribe");
+    //
+    //    source.subscribe(
+    //        function(x: any) { console.log("next")},
+    //        function(e: any) {console.log("error"),
+    //        function() { console.log("complete")}}
+    //    );
+    //
+    //    console.log("after subscribe");
+    //
+    //});
 
 });
 
